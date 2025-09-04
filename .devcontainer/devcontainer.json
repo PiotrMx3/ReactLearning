@@ -1,0 +1,28 @@
+{
+"name": "React Vite TS",
+"build": {
+"dockerfile": "Dockerfile"
+},
+"remoteUser": "node",
+"features": {},
+"customizations": {
+"vscode": {
+"extensions": [
+"dbaeumer.vscode-eslint",
+"esbenp.prettier-vscode",
+"dsznajder.es7-react-js-snippets"
+],
+"settings": {
+"editor.formatOnSave": true,
+"typescript.tsdk": "node_modules/typescript/lib"
+}
+}
+},
+"forwardPorts": [5173, 5174],
+"portsAttributes": {
+"5173": { "label": "Vite Dev Server" },
+"5174": { "label": "Vite HMR" }
+},
+"postCreateCommand": "bash -lc 'if [ -f package.json ]; then npm install; fi'",
+"postStartCommand": "bash -lc 'if [ -f package.json ]; then jq \".scripts.dev = ( .scripts.dev // \"vite\" | tostring ) + \" --host\"\" package.json > package.tmp && mv package.tmp package.json || true'"
+}
