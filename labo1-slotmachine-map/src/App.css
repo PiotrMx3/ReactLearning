@@ -4,6 +4,32 @@
   padding: 2rem;
   text-align: center;
 }
+body {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+
+.left-algin {
+  text-align: left;
+}
+.msg_box {
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+button[type="reset"] {
+  margin-top: 5rem;
+}
+.picture_box {
+  width: 200px;
+  height: 200px;
+}
+
+.container_slot {
+  display: flex;
+  gap: 1rem;
+}
 
 .logo {
   height: 6em;
