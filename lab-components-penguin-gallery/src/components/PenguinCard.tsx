@@ -18,7 +18,7 @@ interface PenguinData {
     penguin : IPenguin;
 }
 
-const PenguinCard = ({penguin}:PenguinData ) => {
+export const PenguinCard = ({penguin}:PenguinData ) => {
     return (
         <div className={`${style.container}`}>
             <img src={penguin.image} alt="penguin image" />
@@ -26,8 +26,7 @@ const PenguinCard = ({penguin}:PenguinData ) => {
             <p><b>Species ID:</b> {penguin.id}</p>
             <p> <b>Description:</b> {penguin.description}</p>
         </div>
-
     )
 }
 
-export default PenguinCard;
+
