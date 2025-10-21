@@ -1,0 +1,27 @@
+.slot_machine_container {
+    display: flex;
+    gap: 1rem;
+    justify-content: center ;
+}
+
+.msg_box {
+    justify-content: center;
+    margin-top: 1rem;
+    font-size: 4rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, red, orange, yellow, green, blue);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: moveGradient 4s linear alternate infinite;
+}
+
+
+@keyframes moveGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
