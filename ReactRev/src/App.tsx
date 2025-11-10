@@ -92,22 +92,84 @@ import "./App.css";
 
 // console.log(charsReduce);
 
-interface Games {
-  [key: string]: number;
-}
+// interface Games {
+//   [key: string]: number;
+// }
 
-const games: Games = {};
+// const games: Games = {};
 
-games["Polska"] = 1;
-games["Niemcy"] = 0;
+// games["Polska"] = 1;
+// games["Niemcy"] = 0;
 
-const gamesRecord: Record<string, number> = {};
+// const gamesRecord: Record<string, number> = {};
 
-gamesRecord["Polska"] = 5;
-gamesRecord["Niemcy"] = 2;
+// gamesRecord["Polska"] = 5;
+// gamesRecord["Niemcy"] = 2;
 
-console.log(games);
-console.log(gamesRecord);
+// console.log(games);
+// console.log(gamesRecord);
+
+// const allTags = [
+//   "react",
+//   "typescript",
+//   "css",
+//   "javascript",
+//   "react",
+//   "tailwind",
+//   "css",
+//   "typescript",
+// ];
+
+// const uniqueSortedTags = Array.from(new Set(allTags)).sort((a, b) =>
+//   a.localeCompare(b)
+// );
+// console.log(uniqueSortedTags);
+
+// interface Product {
+//   id: number;
+//   name: string;
+//   category: string;
+// }
+
+// const products: Product[] = [
+//   {id: 101, name: "Laptop", category: "Elektronika"},
+//   {id: 102, name: "Koszula", category: "Odzież"},
+//   {id: 103, name: "Myszka", category: "Elektronika"},
+//   {id: 104, name: "Spodnie", category: "Odzież"},
+//   {id: 105, name: "Monitor", category: "Elektronika"},
+// ];
+
+// const uniqueCategories = Array.from(
+//   new Set(products.map((el) => el.category))
+// ).sort((a, b) => a.localeCompare(b));
+
+// console.log(uniqueCategories);
+
+// interface User {
+//   readonly id: number;
+//   readonly name: string;
+//   readonly age: number;
+//   readonly role?: string; // rola jest opcjonalna
+// }
+
+// const user: User = {
+//   id: 1,
+//   name: "Anna",
+//   age: 30,
+// };
+
+// const updatedUser: User = {...user, age: 31, role: "admin"};
+
+// console.log(updatedUser);
+
+// const user: string | null = "Peter";
+// const user2: string | null = null;
+
+const initialProducts = [
+  {id: 101, name: "Laptop", price: 5000, isOnSale: true},
+  {id: 102, name: "Myszka", price: 150, isOnSale: false},
+  {id: 103, name: "Klawiatura", price: 300, isOnSale: true},
+];
 
 function App() {
   return <></>;
