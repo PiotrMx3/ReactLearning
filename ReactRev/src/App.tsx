@@ -164,13 +164,6 @@ import "./App.css";
 
 // const user: string | null = "Peter";
 // const user2: string | null = null;
-
-const initialProducts = [
-  {id: 101, name: "Laptop", price: 5000, isOnSale: true},
-  {id: 102, name: "Myszka", price: 150, isOnSale: false},
-  {id: 103, name: "Klawiatura", price: 300, isOnSale: true},
-];
-
 function App() {
   return <></>;
 }
