@@ -17,8 +17,6 @@ function App() {
               width: "100%",
               height: "4px",
               backgroundColor: `${el}`,
-              display: "flex",
-              flexDirection: "column-reverse",
             }}
           ></div>
         );
