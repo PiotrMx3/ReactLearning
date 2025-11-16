@@ -1,7 +1,7 @@
 interface PokemonImageProps {
   id: number;
   visible: boolean;
-  size: string;
+  size?: string;
 }
 
 const PokemonImage = ({id, visible, size = "16"}: PokemonImageProps) => {
