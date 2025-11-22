@@ -3,7 +3,7 @@ interface ColorSquareProps {
   size: number;
 }
 const ColorSquare = ({color, size}: ColorSquareProps) => {
-  const clickHandler: React.MouseEventHandler<HTMLDivElement> = (e) => {
+  const clickHandler: React.MouseEventHandler<HTMLDivElement> = () => {
     // const element = window.getComputedStyle(e.currentTarget);
     // alert(`Gekozen kleur : ${element.backgroundColor}`);
 
