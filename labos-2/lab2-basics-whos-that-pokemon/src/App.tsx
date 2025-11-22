@@ -172,7 +172,7 @@ function App() {
     <>
       <div>
         <PokemonImage id={random} visible={false} size={"15"} />
-        <PokemonImage id={random} visible={true} size={"15"} />
+        <PokemonImage id={random} visible={true} />
       </div>
 
       <button>{pokemons[random1].name}</button>
