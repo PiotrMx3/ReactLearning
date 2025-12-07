@@ -7,8 +7,11 @@ interface TextInputProps {
 const TextInput = ({size}: TextInputProps) => {
   const arrayI = Array.from({length: size}, (_, i) => i);
 
-  const changeHandler: React.ChangeEventHandler<HTMLInputElement> = (e) => {
-    alert(e.currentTarget.value);
+  const changeHandler = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    index: number
+  ) => {
+    alert(index + " " + e.currentTarget.value);
   };
 
   return (
@@ -16,7 +19,7 @@ const TextInput = ({size}: TextInputProps) => {
       {arrayI.map((index) => {
         return (
           <input
-            onChange={changeHandler}
+            onChange={(e) => changeHandler(e, index)}
             key={index}
             type="text"
             name={`text-${index}`}
