@@ -1,6 +1,5 @@
 import "./App.css";
-import type React from "react";
-import MyForm from "./Form";
+import {use, useState, type FormEvent, type SetStateAction} from "react";
 
 // const user1 = {
 //   name: "Jan",
@@ -206,10 +205,249 @@ import MyForm from "./Form";
 //   );
 // };
 
+// const SimpleComponent = () => {
+//   const [score, setScore] = useState(10);
+
+//   return (
+//     <>
+//       <button
+//         onClick={() => {
+//           setScore((prev) => prev - 5);
+//         }}
+//       >
+//         You Score is: {score}
+//       </button>
+//     </>
+//   );
+// };
+
+// const FormElement = () => {
+//   const [login, setLogin] = useState("");
+//   const [passwoord, setPassword] = useState("");
+
+//   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+//     event.preventDefault();
+//     setLogin("");
+//     setPassword("");
+//   };
+
+//   return (
+//     <>
+//       <form onSubmit={handleSubmit} action="#">
+//         <label htmlFor="login">Login: </label>
+//         <input
+//           type="text"
+//           name="login"
+//           id="login"
+//           value={login}
+//           onChange={(e) => setLogin(e.target.value)}
+//         />
+//         <br />
+//         <label htmlFor="passwoord">Wachtwoord: </label>
+//         <input
+//           type="passwoord"
+//           name="passwoord"
+//           id="passwoord"
+//           value={passwoord}
+//           onChange={(e) => setPassword(e.target.value)}
+//         />
+//         <br />
+//         <button
+//           disabled={login.length < 3 || passwoord.length < 3}
+//           type="submit"
+//         >
+//           Versturen !
+//         </button>
+//       </form>
+//     </>
+//   );
+// };
+
+// const Shoping = () => {
+//   const [shoping, setShoping] = useState<string[]>(["Brood", "Melk", "Eiren"]);
+//   const [product, setProduct] = useState("");
+
+//   return (
+//     <>
+//       <input
+//         onChange={(e) => setProduct(e.target.value)}
+//         type="text"
+//         placeholder="Geef product in...."
+//         value={product}
+//       />
+//       <button
+//         onClick={() => {
+//           setShoping([product, ...shoping]);
+//           setProduct("");
+//         }}
+//       >
+//         Voeg toe !
+//       </button>
+//       <br />
+//       <br />
+
+//       {shoping.map((el, i) => {
+//         return <li key={el + i}>{el}</li>;
+//       })}
+//     </>
+//   );
+// };
+
+// const NamesMap = () => {
+//   const [names, setNames] = useState<string[]>(["Anna", "Tom", "Joske"]);
+//   const [transformState, setTransformState] = useState(false);
+//   return (
+//     <>
+//       <button
+//         onClick={() => {
+//           if (transformState) {
+//             setNames(names.map((el) => el.toLowerCase()));
+//           } else {
+//             setNames(names.map((el) => el.toUpperCase()));
+//           }
+
+//           setTransformState(!transformState);
+//         }}
+//       >
+//         {transformState
+//           ? "Click Me To Tranform List to Uppercase!"
+//           : "Click Me To Tranform List to Lowercase!"}
+//       </button>
+//       <br />
+//       <br />
+
+//       {names.map((el, i) => {
+//         return <li key={el + i}>{el}</li>;
+//       })}
+//     </>
+//   );
+// };
+
+interface TodoItem {
+  id: number;
+  text: string;
+  done: boolean;
+}
+
+interface TodoItemProps {
+  id: number;
+  text: string;
+  done: boolean;
+  setDone(id: number, done: boolean): void;
+  removeItem(id: number): void;
+}
+
+const todoItemsArray: TodoItem[] = [
+  {id: 1, text: "Uczyć się Reacta", done: false},
+  {id: 2, text: "uczyc sie pytona", done: true},
+];
+
+const TodoListItem = ({id, text, done, setDone, removeItem}: TodoItemProps) => {
+  return (
+    <>
+      <li style={{display: "flex", gap: "1rem"}}>
+        <p>Taak Id: {id}</p>
+        <p>{text}</p>
+        {done ? <p>Taak gedaan</p> : <p>Nog te doen</p>}
+        <button
+          onClick={() => {
+            setDone(id, !done);
+          }}
+          type="button"
+        >
+          {done ? <p>Beschikbaar maken</p> : <p>Afronden</p>}
+        </button>
+        <button
+          onClick={() => {
+            removeItem(id);
+          }}
+          type="button"
+        >
+          X
+        </button>
+      </li>
+    </>
+  );
+};
+
+const TodoList = () => {
+  const [todos, setTodos] = useState<TodoItem[]>(todoItemsArray);
+  const [task, setTask] = useState<string>("");
+
+  function setDone(id: number, done: boolean) {
+    const newArray = todos.map((el) =>
+      // If element doesn't change return element back without ...
+      el.id === id ? {...el, done: done} : el
+    );
+    setTodos(newArray);
+    return;
+  }
+
+  function removeItem(id: number) {
+    const newArray = todos.filter((el) => el.id !== id);
+    setTodos(newArray);
+    return;
+  }
+
+  const maxId: number = todos.reduce(
+    (max, el) => (el.id >= max ? el.id + 1 : max),
+    1
+  );
+
+  return (
+    <>
+      <form
+        style={{display: "flex", gap: "2rem", marginBottom: "2rem"}}
+        action="#"
+        onSubmit={(e) => {
+          e.preventDefault();
+        }}
+      >
+        <label htmlFor="task">Taak:</label>
+        <input
+          onChange={(e) => setTask(e.target.value)}
+          id="task"
+          type="text"
+          value={task}
+        />
+        <button
+          onClick={() => {
+            if (task === "") {
+              alert("Taak mag niet leg zijn !");
+            }
+            setTodos([...todos, {id: maxId, text: task, done: false}]);
+            setTask("");
+          }}
+          type="submit"
+        >
+          Voeg Toe !
+        </button>
+      </form>
+
+      {todos.length === 0 ? (
+        <h2>Voeg taken toe !</h2>
+      ) : (
+        todos.map((el) => {
+          return (
+            <TodoListItem
+              key={el.id}
+              id={el.id}
+              text={el.text}
+              done={el.done}
+              setDone={setDone}
+              removeItem={removeItem}
+            />
+          );
+        })
+      )}
+    </>
+  );
+};
+
 function App() {
   return (
     <>
-      <MyForm />
+      <TodoList />
     </>
   );
 }

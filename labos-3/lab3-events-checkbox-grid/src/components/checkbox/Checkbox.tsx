@@ -19,7 +19,7 @@ const Checkbox = ({size}: CheckboxProps) => {
     name: string
   ) => {
     alert(
-      `Check box: ${name} is --> ${e.target.checked ? "checked" : "uncheced"}`
+      `Check box: ${name} is --> ${e.target.checked ? "checked" : "unchecked"}`
     );
   };
 

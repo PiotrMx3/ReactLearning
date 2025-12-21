@@ -6,7 +6,9 @@ function App() {
     <>
       <h1>Labo 2: Slots</h1>
 
+      <SlotMachine slots={3} />
       <SlotMachine slots={5} />
+      <SlotMachine slots={7} />
     </>
   );
 }
