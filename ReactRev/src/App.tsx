@@ -1,5 +1,6 @@
 import "./App.css";
-import {use, useState, type FormEvent, type SetStateAction} from "react";
+import {useState} from "react";
+// import {use, useState, type FormEvent, type SetStateAction} from "react";
 
 // const user1 = {
 //   name: "Jan",
@@ -423,6 +424,7 @@ const TodoList = () => {
           Voeg Toe !
         </button>
       </form>
+      <br />
 
       {todos.length === 0 ? (
         <h2>Voeg taken toe !</h2>
