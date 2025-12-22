@@ -1,0 +1,25 @@
+.penguinContainer {
+  background-color: whitesmoke;
+  color: black;
+  padding: 1rem;
+  width: 20rem;
+  margin: 1rem;
+  border-radius: 5%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.penguinContainer:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.penguinContainerImage {
+  width: 18rem;
+  aspect-ratio: 16/9;
+  border-radius: 5%;
+}
+
+.selected {
+  background-color: rgba(93, 175, 253, 0.3);
+}
