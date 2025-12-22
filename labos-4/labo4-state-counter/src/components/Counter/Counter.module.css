@@ -1,0 +1,15 @@
+.counterbox {
+  display: flex;
+  width: 600px;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  justify-content: space-around;
+}
+
+.positive {
+  color: green;
+}
+
+.negative {
+  color: red;
+}
