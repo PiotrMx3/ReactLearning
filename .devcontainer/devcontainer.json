@@ -7,7 +7,8 @@
       "extensions": [
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
-        "dsznajder.es7-react-js-snippets"
+        "dsznajder.es7-react-js-snippets",
+        "vscode.typescript-language-features"
       ],
       "settings": {
         "editor.formatOnSave": true,
@@ -17,8 +18,8 @@
   },
   "forwardPorts": [5173, 5174],
   "portsAttributes": {
-    "5173": { "label": "Vite Dev Server" },
-    "5174": { "label": "Vite HMR" }
+    "5173": {"label": "Vite Dev Server"},
+    "5174": {"label": "Vite HMR"}
   },
   "postCreateCommand": "if [ -f package.json ]; then npm install; fi"
 }
