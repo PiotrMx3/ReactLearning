@@ -1,0 +1,36 @@
+.boxShopping {
+  border: 1px red solid;
+  width: 300px;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputField {
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputfieldButton {
+  margin-right: auto;
+  display: block;
+}
+
+.errorMessage {
+  background-color: red;
+  padding: 0.5rem;
+}
+
+.successMessage {
+  background-color: aquamarine;
+  padding: 0.5rem;
+  color: black;
+}
+.successMessage,
+.errorMessage {
+  margin-bottom: 1rem;
+  font-size: large;
+  font-weight: bold;
+  border-radius: 20px;
+}
