@@ -1,0 +1,13 @@
+.slotsContainer {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.slotsContainerImage {
+  border-radius: 5%;
+  height: 7rem;
+  width: 7rem;
+  border: 5px blue solid;
+}
