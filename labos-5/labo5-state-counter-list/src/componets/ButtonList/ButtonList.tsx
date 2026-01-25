@@ -30,9 +30,9 @@ const ButtonList = () => {
   return (
     <>
       <p>Som van de tellers: {som}</p>
-      {numberArray.map((el, i) => {
+      {numberArray.map((_, i) => {
         return (
-          <React.Fragment key={el + "-" + i}>
+          <React.Fragment key={i}>
             <div style={{display: "flex", gap: "2rem"}}>
               <button onClick={() => substringNumber(i)}>Omlaag</button>
               <p>Coutn: {numberArray[i]}</p>
