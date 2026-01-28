@@ -10,6 +10,7 @@ const Timer = () => {
 
     return () => {
       clearInterval(timer);
+      console.log("clean up");
     };
   }, []);
 
