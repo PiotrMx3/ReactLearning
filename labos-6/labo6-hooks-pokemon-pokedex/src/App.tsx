@@ -13,7 +13,6 @@ function App() {
   return (
     <>
       <Pokedex limit={componentLimit} />
-      {/* <Pokedex limit={componentLimit} key={componentLimit} /> */}
       <input
         onChange={(e) => setLimit(Number(e.target.value))}
         type="number"
