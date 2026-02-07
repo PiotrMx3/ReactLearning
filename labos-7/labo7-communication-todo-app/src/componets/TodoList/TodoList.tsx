@@ -16,7 +16,7 @@ const TodoList = ({data, markCompleted}: TodoListProps) => {
           key={i}
           completed={e.completed}
           name={e.name}
-          onMarkCompleted={markCompleted}
+          markCompleted={markCompleted}
           index={i}
         />
       ))}

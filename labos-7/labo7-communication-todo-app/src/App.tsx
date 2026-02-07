@@ -11,8 +11,6 @@ interface TodoItem {
 const App = () => {
   const [todos, setTodos] = useState<TodoItem[]>([]);
 
-  const [todo, setTodo] = useState("");
-
   const addTodo = (todo: string) => {
     setTodos([...todos, {name: todo, completed: false}]);
   };

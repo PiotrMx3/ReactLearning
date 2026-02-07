@@ -1,14 +1,14 @@
 interface TodoItemProps {
   completed: boolean;
   name: string;
-  onMarkCompleted: (index: number, completed: boolean) => void;
+  markCompleted: (index: number, completed: boolean) => void;
   index: number;
 }
 
 const TodoItem = ({
   completed,
   name,
-  onMarkCompleted: onMarkCompleted,
+  markCompleted: markCompleted,
   index,
 }: TodoItemProps) => {
   return (
@@ -16,7 +16,7 @@ const TodoItem = ({
       <input
         type="checkbox"
         checked={completed}
-        onChange={(event) => onMarkCompleted(index, event.target.checked)}
+        onChange={(event) => markCompleted(index, event.target.checked)}
       />
       <span style={{textDecoration: completed ? "line-through" : "none"}}>
         {name}
